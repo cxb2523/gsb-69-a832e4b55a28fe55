@@ -22,8 +22,12 @@ import {
     type DependencyPaths,
     DependencyType,
 } from '../../../../shared/src/data/Configuration.js';
-import { type Task } from '../../../../shared/src/data/Projects.js'; 
+import { type Task } from '../../../../shared/src/data/Projects.js';
 import { type Av1anStatus } from '../../../../shared/src/data/Types/Status.js';
+import {
+    type Av1anTaskAudit,
+    auditAv1anTask,
+} from './Av1anAudit.js';
 // import commandExists from "command-exists";
 
 type Av1anOptions = Task['item'] & { Av1an: Options };
@@ -549,6 +553,19 @@ export class Av1an extends EventEmitter {
 
     public get statusHistory() {
         return this.allStates;
+    }
+
+    /**
+     * Pure diagnostic snapshot of the command line that would be built and the
+     * current status progression. Read-only: starts no process, reads no files
+     * and returns JSON-serializable plain data.
+     */
+    public audit(): Av1anTaskAudit {
+        return auditAv1anTask({
+            options: this.options,
+            environment: this.environment,
+            statusHistory: this.statusHistory,
+        });
     }
 
     public get status() {

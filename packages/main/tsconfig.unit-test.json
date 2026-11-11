@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "noEmit": false,
+        "outDir": "../../dist-test",
+        "sourceMap": false,
+        "rootDir": "../..",
+        "types": ["node"]
+    },
+    "include": [
+        "src/utils/Av1an/**/*.ts",
+        "../shared/src/**/*.ts",
+        "../../types/**/*.d.ts"
+    ],
+    "exclude": []
+}

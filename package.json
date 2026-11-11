@@ -21,6 +21,7 @@
         "compile:win": "npm run build && electron-builder build --config electron-builder.mjs --win",
         "package": "npm run build -w @av1ation-station/package && node --env-file=.env --env-file=.env.local ./packages/package/dist/index.js",
         "test": "npx playwright test ./tests/e2e.spec.ts",
+        "test:unit": "tsc -p packages/main/tsconfig.unit-test.json && node --test dist-test/packages/main/src/utils/Av1an/Av1anAudit.spec.js",
         "start": "node packages/dev-mode.js",
         "typecheck": "npm run typecheck -ws --if-present",
         "create-renderer": "cd packages && npm create vite@latest renderer",
