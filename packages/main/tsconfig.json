@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "module": "NodeNext",
+        "target": "ESNext",
+        "sourceMap": false,
+        "moduleResolution": "NodeNext",
+        "skipLibCheck": true,
+        "strict": true,
+        "isolatedModules": true,
+        "types": [
+            "node"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@av1ation-station/preload": [
+                "../preload"
+            ],
+            "@av1ation-station/renderer": [
+                "../renderer-backup"
+            ],
+            "@av1ation-station/shared": [
+                "../shared"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "../../types/**/*.d.ts"
+    ],
+    "exclude": [
+        "**/*.spec.ts",
+        "**/*.test.ts"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "name": "@av1ation-station/main",
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "typecheck": "tsc --noEmit"
+    },
+    "exports": {
+        ".": {
+            "types": "./src/index.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "dependencies": {
+        "@av1ation-station/preload": "*",
+        "@av1ation-station/renderer": "*",
+        "@av1ation-station/shared": "*",
+        "electron-updater": "6.6.2",
+        "terminate": "^2.8.0",
+        "watcher": "^2.3.1"
+    },
+    "devDependencies": {
+        "@vite-electron-builder/electron-versions": "*",
+        "electron-devtools-installer": "^4.0.0",
+        "typescript": "^5.9.2",
+        "vite": "^7.1.1"
+    }
+}

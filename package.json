@@ -1,0 +1,47 @@
+{
+    "name": "av1ation-station",
+    "description": "Chunked Encoding in a Graphical User Interface",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "author": {
+        "name": "Boats",
+        "email": "142189976+BoatsMcGee@users.noreply.github.com"
+    },
+    "main": "packages/entry-point.js",
+    "workspaces": [
+        "packages/*"
+    ],
+    "engines": {
+        "node": ">=23.0.0"
+    },
+    "scripts": {
+        "build": "npm run build -ws --if-present",
+        "compile": "npm run build && electron-builder build --config electron-builder.mjs",
+        "compile:win": "npm run build && electron-builder build --config electron-builder.mjs --win",
+        "package": "npm run build -w @av1ation-station/package && node --env-file=.env --env-file=.env.local ./packages/package/dist/index.js",
+        "test": "npx playwright test ./tests/e2e.spec.ts",
+        "start": "node packages/dev-mode.js",
+        "typecheck": "npm run typecheck -ws --if-present",
+        "create-renderer": "cd packages && npm create vite@latest renderer",
+        "integrate-renderer": "npm start --workspace @vite-electron-builder/integrate-renderer",
+        "init": "npm run create-renderer && npm run integrate-renderer && npm install"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.32.0",
+        "@npmcli/map-workspaces": "^4.0.2",
+        "@playwright/test": "1.54.2",
+        "@types/node": "24.2.1",
+        "electron": "^37.2.6",
+        "electron-builder": "^26.0.12",
+        "eslint": "^9.33.0",
+        "eslint-plugin-vue": "^10.4.0",
+        "glob": "^11.0.3",
+        "globals": "^16.3.0",
+        "playwright": "1.54.2",
+        "typescript-eslint": "^8.39.0"
+    },
+    "dependencies": {
+        "@av1ation-station/main": "*"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "@av1ation-station/package",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "typecheck": "tsc --noEmit"
+    },
+    "exports": {
+        ".": {
+            "default": "./dist/index.js",
+            "types": "./src/index.ts"
+        }
+    },
+    "devDependencies": {
+        "@types/7zip-min": "^2.0.0",
+        "@types/decompress": "^4.2.7",
+        "typescript": "^5.9.2"
+    },
+    "dependencies": {
+        "7zip-min": "^2.1.0",
+        "decompress": "^4.2.1",
+        "win-7zip": "^0.1.1"
+    }
+}
